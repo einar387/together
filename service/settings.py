@@ -177,7 +177,6 @@ ASGI_APPLICATION = "service.asgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-print("AWS -> ", "AWS_DB_NAME" in os.environ)
 
 if "AWS_DB_NAME" in os.environ:
     DATABASES = {
@@ -202,6 +201,7 @@ else:
         }
     }
 
+print("AWS -> ", os.environ.get('LOCAL_DB_NAME'))
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
